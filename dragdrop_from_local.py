@@ -27,12 +27,17 @@ def drop_files(element, files, offsetX=0, offsetY=0):
 
 WebElement.drop_files = drop_files
 
-def auto_submit(path_to_chrome_driver, checker_web, login, path_to_files):
+def auto_submit(path_to_chrome_driver = None, 
+                checker_url = None,
+                path_to_files= None, 
+                login_info = None, 
+                login_agency = None,
+                ):
     driver = webdriver.Chrome(
     executable_path = path_to_chrome_driver
                         )
-    driver.get(checker_web)
-    driver.find_element_by_id("checker_login_email").send_keys(login)
+    driver.get(checker_url)
+    driver.find_element_by_id("checker_login_email").send_keys(login_info)
     python_button = driver.find_element_by_id("login_close")
     python_button.click()
     dropzone = driver.find_elements_by_xpath("/html/body")[0]
@@ -44,10 +49,10 @@ def auto_submit(path_to_chrome_driver, checker_web, login, path_to_files):
 if __name__ == '__main__':
     #Give path to chrome driver
     path_to_chrome_driver ="C:\\Users\\conma\\OneDrive - Cal State Fullerton\\Work-Related Documents\\SCCWRP\\Projects\\BLM\\chromedriver.exe" 
-    checker_web = 'https://ceriochecker.sccwrp.org/checker/'
-    login = 'test@sccwrp.org'
-    path_to_files = ["C:\\Users\\conma\\OneDrive\\Desktop\\fromDarrin-rptCerioDataSheet.xlsx"]
-    auto_submit(path_to_chrome_driver, checker_web, login, path_to_files)
+    checker_url = 'https://checker.sccwrp.org/checker/'
+    login_info = 'test@sccwrp.org'
+    path_to_files = ["C:\\Users\\conma\\Downloads\\MG83 - MG85 DB Tabs.xlsx"]
+    auto_submit(path_to_chrome_driver, checker_url, path_to_files, login_info)
 
 
 

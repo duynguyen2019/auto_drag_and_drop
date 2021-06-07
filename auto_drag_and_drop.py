@@ -23,10 +23,10 @@ driver = webdriver.Chrome(
                         )
 
 driver.get('https://ceriochecker.sccwrp.org/checker/')
-path_to_login  ='/html/body/div[10]/div[2]/div[1]/input'
-path_to_sign_in = '//*[@id="login_close"]'
-login = 'test@sccwrp.org'
-driver.find_element_by_xpath(path_to_login).send_keys(login)
+path_to_login_info  ='/html/body/div[10]/div[2]/div[1]/input'
+path_to_sign_in = '//*[@id="login_info_close"]'
+login_info = 'test@sccwrp.org'
+driver.find_element_by_xpath(path_to_login_info).send_keys(login_info)
 python_button = driver.find_elements_by_xpath(path_to_sign_in)[0]
 python_button.click()
 
