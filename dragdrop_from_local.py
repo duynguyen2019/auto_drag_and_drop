@@ -50,10 +50,10 @@ def auto_submit(path_to_chrome_driver = None,
 
 if __name__ == '__main__':
     #Give path to chrome driver
-    path_to_chrome_driver ="C:\\Users\\conma\\OneDrive - Cal State Fullerton\\Work-Related Documents\\SCCWRP\\Projects\\BLM\\chromedriver.exe" 
+    path_to_chrome_driver ="chromedriver.exe" 
     checker_url = 'https://checker.sccwrp.org/checker/'
     login_info = 'test@sccwrp.org'
-    path_to_files = ["C:\\Users\\conma\\Downloads\\MG83 - MG85 DB Tabs.xlsx"]
+    path_to_files = ["P:\\PartTimers\\DuyNguyen\\Projects\\bioretention_mechanisms\\documents\\Planter BMP Instruments.xlsx"]
     auto_submit(path_to_chrome_driver, checker_url, path_to_files, login_info)
 
 
